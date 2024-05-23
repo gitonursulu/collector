@@ -1,7 +1,7 @@
 "use client";
 
 import "./globals.css";
-import { ThemeProvider, defaultTheme } from 'evergreen-ui';
+import { ThemeProvider, defaultTheme, Pane } from 'evergreen-ui';
 import ProfileDropdown from "./components/ProfileDropdown";
 import Sidebar from "./components/Sidenav";
 
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
     <body>
       <ThemeProvider value={defaultTheme}>
-        <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', minHeight: '100vh' }}>
           <Sidebar />
           <div style={{ flex: 1 }}>
             <ProfileDropdown />

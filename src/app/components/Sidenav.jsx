@@ -1,5 +1,5 @@
 // app/components/Sidenav.js
-import { Pane, Menu, Button, SideSheet, Position } from 'evergreen-ui';
+import { Pane, Menu, SideSheet, Position, IconButton, MenuOpenIcon } from 'evergreen-ui';
 import { useState } from 'react';
 import Link from 'next/link';
 
@@ -7,11 +7,9 @@ const Sidebar = () => {
   const [isShown, setIsShown] = useState(false);
 
   return (
-    <div>
-      <Button onClick={() => setIsShown(true)} style={{ margin: '10px' }}>
-        Menü
-      </Button>
-      <SideSheet
+    <>
+    <IconButton icon={MenuOpenIcon} onClick={() => setIsShown(true)} style={{margin:10}} />
+    <SideSheet
         width={200}
         position={Position.LEFT}
         isShown={isShown}
@@ -27,7 +25,7 @@ const Sidebar = () => {
           </Menu>
         </Pane>
       </SideSheet>
-    </div>
+    </>
   );
 };
 
